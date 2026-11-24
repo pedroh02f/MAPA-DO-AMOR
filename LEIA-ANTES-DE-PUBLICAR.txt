@@ -1,0 +1,25 @@
+MAPA DO AMOR - VERSAO COM CHECKOUT KIWIFY
+
+O QUE FOI CORRIGIDO
+- Botao de compra habilitado na tela de resultado do quiz e na barra movel do celular.
+- Ambos levam diretamente a https://pay.kiwify.com.br/xy7oOc7.
+- O componente de pagina de vendas, se utilizado no futuro, tambem recebeu o link.
+- Textos de "Em breve", webhook e PDF individual foram substituidos por descricao de um unico e-book para todas as compradoras.
+- O quiz e a API do Neon foram preservados; nao alterei a configuracao do banco.
+
+ATENCAO ANTES DE PUBLICAR
+1. Confirme no painel da Kiwify que o link acima aponta para o produto correto, no preco correto.
+2. Cadastre o e-book PDF completo na area de membros da Kiwify e configure a liberacao automatica apos o pagamento.
+3. Teste o fluxo completo, incluindo compra e recebimento do arquivo, ANTES de iniciar anuncios.
+4. Atualize os dados do responsavel, a politica de privacidade e o prazo de retencao dos dados, pois o quiz guarda dados de nascimento e respostas no Neon.
+5. Publique a nova versao do codigo em uma hospedagem com suporte a Next.js e banco Neon. Este arquivo ZIP NAO atualiza o site que ja esta no ar automaticamente.
+
+ARQUIVOS PRINCIPAIS ALTERADOS
+components/love-quiz.tsx
+components/mapa-do-amor-page.tsx
+app/globals.css
+
+OBSERVACOES
+A pagina ativa inicial (app/page.tsx) usa LoveQuiz. O componente mapa-do-amor-page.tsx existe no ZIP, mas nao esta ligado como pagina principal.
+O projeto depende de DATABASE_URL para salvar o quiz no Neon. Nenhum segredo/credencial foi adicionado ao ZIP.
+O valor R$ 22,90 e o endereco do checkout sao os que foram fornecidos na conversa; verifique se continuam corretos na Kiwify.
